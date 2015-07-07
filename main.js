@@ -1,8 +1,8 @@
 $(document).ready(function () {
-  var query = decodeURIComponent(window.location.search.substring(1));
+  var OSCAR_QUERY_URL = 'http://107.170.32.26:8123/status';
   var table = $('#table').DataTable({
     ajax: {
-      url: query,
+      url: OSCAR_QUERY_URL,
       dataSrc: function(data) {
         for (var i = 0; i < data.length; i++) {
           data[i].date = relative_time(data[i].date);
