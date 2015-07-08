@@ -6,6 +6,11 @@ $(document).ready(function () {
       dataSrc: function(data) {
         for (var i = 0; i < data.length; i++) {
           data[i].date = relative_time(data[i].date);
+          if (data[i].last_failed.length > 0) {
+            data[i].last_failed = relative_time(data[i].last_failed);
+          } else {
+            data[i].last_failed = 'never';
+          }
         }
         return data;
       },
@@ -16,6 +21,7 @@ $(document).ready(function () {
       { data: 'date', title: "Time" },
       { data: 'summary', title: "Summary" },
       { data: 'description', title: "Description" },
+      { data: 'last_failed', title: "Last Failed" },
     ],
     // sorting by ascending on column 1 results in failures, notes, successes
     order: [[1, 'asc'], [0, 'asc']],
