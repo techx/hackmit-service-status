@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var OSCAR_QUERY_URL = 'http://oscar.hackmit.org/status';
+  var OSCAR_QUERY_URL = 'https://oscar.hackmit.org/status';
   var table = $('#table').DataTable({
     ajax: {
       url: OSCAR_QUERY_URL,
